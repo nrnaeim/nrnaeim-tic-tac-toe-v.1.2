@@ -32,7 +32,7 @@ newGame.addEventListener("click", () => {
 });
 
 function winnerCheck() {
-  conditions.forEach((condition, index) => {
+  for(let condition of conditions) {
     var pos0 = buttons[condition[0]].innerText;
     var pos1 = buttons[condition[1]].innerText;
     var pos2 = buttons[condition[2]].innerText;
@@ -43,6 +43,7 @@ function winnerCheck() {
         buttons.forEach((value) => {
           value.disabled = true;
         });
+        break;
       } else if (count === 9) {
         h1.innerText = "Draw";
       }
